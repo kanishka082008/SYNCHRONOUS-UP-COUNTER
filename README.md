@@ -1,10 +1,7 @@
 ### SYNCHRONOUS-UP-COUNTER
 
 **AIM:**
-
-To implement 4 bit synchronous up counter and validate functionality.
-
-**SOFTWARE REQUIRED:**
+`**SOFTWARE REQUIRED:**
 
 Quartus prime
 
@@ -31,16 +28,32 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 /* write all the steps invloved */
 
 **PROGRAM**
-
+module upcounter(clk,rst,count);
+input clk,rst;
+output reg[3:0]count;
+always@(posedge clk or negedge rst)
+begin
+if(!rst)
+count <= 4'b0000;
+else
+count <= count+1;
+end
+endmodule
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
 Developed by: RegisterNumber:
 */
 
 **RTL LOGIC UP COUNTER**
+<img width="1088" height="628" alt="image" src="https://github.com/user-attachments/assets/17bc9d1f-f857-4f0f-aabf-54d4cc1d555c" />
+
 
 **TIMING DIAGRAM FOR IP COUNTER**
+<img width="1182" height="146" alt="image" src="https://github.com/user-attachments/assets/5b53649a-9bb7-45fc-ae10-dadd1cd032a6" />
+
 
 **TRUTH TABLE**
 
 **RESULTS**
+implementation of  4 bit synchronous up counter and validate functionality is verified
+
